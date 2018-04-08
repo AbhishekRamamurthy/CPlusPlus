@@ -31,7 +31,11 @@ int main() {
 	cout << "Height of Tree After Balance " << obj.Height() << endl;
 	obj.LevelOrder();
 	cout << "Level order After Balance " <<endl;
-
+	obj.Insert(1);
+	obj.LevelOrder();
+	head = obj.GetHead();
+	head = obj.LeastCommonAncestor(head,1,5);
+	cout << "Common Ancestor = " << head->data << endl;
 	return 0;
 }
 

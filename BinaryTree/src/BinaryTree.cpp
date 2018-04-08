@@ -141,6 +141,24 @@ void BinaryTree<T>::LevelOrder() {
 }
 
 template <class T>
+Node<T>* BinaryTree<T>::LeastCommonAncestor(Node<T>* node, const T& x, const T& y) {
+
+	if(node == nullptr)
+		return nullptr;
+
+	if(node->data == x || node->data == y)
+		return node;
+
+	Node<T>* left = LeastCommonAncestor(node->left,x,y);
+	Node<T>* right = LeastCommonAncestor(node->right,x,y);
+
+	if(left && right)
+		return node;
+
+	return left != nullptr ? left : right;
+}
+
+template <class T>
 void BinaryTree<T>::Display(Node<T>* root) {
 
 	if(root == nullptr)

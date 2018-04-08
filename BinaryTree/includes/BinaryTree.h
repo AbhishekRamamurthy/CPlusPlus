@@ -26,9 +26,9 @@ public:
 	void LevelOrder();
 	unsigned int Height();
 	unsigned int Height(Node<T>*);
-
 	void BalanceTree();
 	Node<T>* BalanceTree(std::vector<Node<T>*>, int,int);
+	Node<T>* LeastCommonAncestor(Node<T>*,const T&, const T&);
 	virtual ~BinaryTree();
 private:
 	void Insert(const T&, Node<T>*);
